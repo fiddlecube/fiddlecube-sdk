@@ -1,0 +1,2 @@
+[console_scripts]
+soothsayer = soothsayer:cli

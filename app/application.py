@@ -1,13 +1,16 @@
+import os
 import sys
 from sdv.datasets.local import load_csvs
 from sdv.metadata import SingleTableMetadata
 from sdv.lite import SingleTablePreset
 from sdv.evaluation.single_table import evaluate_quality
 
-def main(dataset_name):
-    # assume that my_folder contains 1 CSV file named 'guests.csv'
-    datasets = load_csvs(folder_name='data/')
+def generate_from_tabular(path_to_csv_file):
+    folder_name = os.path.dirname(path_to_csv_file)
+    datasets = load_csvs(folder_name=folder_name)
 
+    filename = os.path.basename(path_to_csv_file)
+    dataset_name = os.path.splitext(filename)[0]
     # the data is available under the file name
     csic_data = datasets[dataset_name]
 
@@ -29,11 +32,3 @@ def main(dataset_name):
 
     quality_report = evaluate_quality(
         real_data=csic_data, synthetic_data=synthetic_data, metadata=metadata)
-
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Error: missing arguments")
-        print("Usage: python main.py [dataset_name] [target_rows]")
-        print("Example: python main.py csic_ecml_1000 10000")
-        exit(1)
-    main(sys.argv[1])
