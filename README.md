@@ -13,5 +13,3 @@ pip3 install fiddlecube
 ```bash
 fiddlecube generate -p <Path_To_Your_Csv_file> -n <Number_Of_Rows_To_Generate>
 ```
-
-You will find the synthetic data in the `output/` folder.
