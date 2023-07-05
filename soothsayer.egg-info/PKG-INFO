@@ -12,6 +12,7 @@ Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 
 # Soothsayer - Generate synthetic tabular data
+
 Soothsayer enables the generation of synthetic tabular data.
 
 ## Installation
