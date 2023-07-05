@@ -5,13 +5,13 @@ Soothsayer enables the generation of synthetic tabular data.
 ## Installation
 
 ```bash
-python3 setup.py install
+pip3 install fiddlecube
 ```
 
 ## Generate tabular data
 
 ```bash
-soothsayer generate -p <Path_To_Your_Csv_file>
+fiddlecube generate -p <Path_To_Your_Csv_file> -n <Number_Of_Rows_To_Generate>
 ```
 
 You will find the synthetic data in the `output/` folder.
