@@ -4,10 +4,10 @@ version = "0.1.0"
 description = "Generate synthetic data from seed datasets."
 authors = ["Kaushik Srinivasan <kaushik@fiddlecube.ai>"]
 readme = "README.md"
-packages = [{ include = "fiddlecube_synthesis" }]
+packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
-python = ">=3.9, <3.11"
+python = ">=3.9, <3.13"
 sdv = "^1.2.0"
 click = "^8.1.3"
 

@@ -1,6 +1,6 @@
-# Soothsayer - Generate synthetic tabular data
+# Soothsayer - Generate synthetic data
 
-Soothsayer enables the generation of synthetic tabular data.
+Soothsayer enables the generation of synthetic data.
 
 ## Installation
 
@@ -8,8 +8,8 @@ Soothsayer enables the generation of synthetic tabular data.
 pip3 install fiddlecube
 ```
 
-## Generate tabular data
+## Generate data
 
 ```bash
-fiddlecube generate -p <Path_To_Your_Csv_file> -n <Number_Of_Rows_To_Generate>
+fiddlecube generate -p <Path_To_Your_PDF_file> -n <Number_Of_Rows_To_Generate>
 ```
