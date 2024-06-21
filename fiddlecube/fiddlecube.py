@@ -34,3 +34,30 @@ class FiddleCube:
             print("Failed to generate data.")
             print("==response==", response)
             return None
+
+    def diagnose(self, logs: list[dict]):
+        """
+        Run diagnostics on a log of LLM interactions.
+        Step-by-step analysis of how the LLM output was achieved
+        based on the query, prompt and context.
+        Example:
+        fc.diagnose([
+            {
+                "query": "What is the capital of France?",
+                "answer": "Paris",
+                "prompt": "You are an expert at answering hard questions.",
+                "context": ["Paris is the capital of France."],
+            }
+        ])
+        """
+        url = "https://api.fiddlecube.ai/api/debug/"
+        headers = {"accept": "application/json", "Content-Type": "application/json"}
+        data = {"dataset": logs}
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+        if response.status_code == 200:
+            print("Debugging successful.")
+            return response.json()
+        else:
+            print("Failed to debug.")
+            print("==response==", response)
+            return None
