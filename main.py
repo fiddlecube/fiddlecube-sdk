@@ -1,6 +1,6 @@
-from fiddlecube.fiddlecube import FiddleCube
+from fiddlecube import FiddleCube
 
-fc = FiddleCube(api_key="cabaa6b5-4c58-467a-9471-c3433555795e")
+fc = FiddleCube(api_key="<api-key>")
 dataset = fc.generate(
     [
         "The cat did not want to be petted.",
