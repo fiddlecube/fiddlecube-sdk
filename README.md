@@ -1,12 +1,30 @@
 # FiddleCube - Generate golden evaluation datasets for RAG
 
-Generate golden datasets containing ideal outputs to evaluate RAG systems.
+Test and evaluate your RAG system, get actionable diagnosis of the top problems.
+Systematically improve the prompt, RAG and data points in the RAG storage.
 
-## How does it work?
+## Evaluation dilemma - scale vs effectiveness
 
-Feed a set of chunks from your vector DB to Fiddlecube. Generate a wide range of queries to evaluate your LLM.
-When evaluation fails, diagnose it step by step to come up with actionable insights.
-Identify the root cause of failures: whether it is your prompt, RAG system or lack of correct context in the DB.
+Evals are either highly effective - human evaluation and manual QA.
+Or they scale well while being unreliable - LLM as a judge.
+
+## Data driven evaluation
+
+Evaluating an LLM effectively needs:
+1. An accurate representation of possible queries and usages of the LLM and RAG DB.
+2. Gold-standard responses to the queries, grounded in knowledge.
+3. Evaluate the outputs based on subjective rules and business logic
+4. Scale to accomodate fast-paced dev teams - ideally as a part of CI/CD
+
+## Evaluating using a golden dataset - step by step
+1. Pass a list of chunks from your vector DB to the fiddlecube generate API.
+2. FiddleCube generates a wide range of queries and answers across 7 question type.
+   Includes multi-turn conversations, QA and complex reasoning.
+3. Use the golden dataset to evaluate real user interactions with your LLM.
+4. FiddleCube will diagnose failed queries providing a step by step analysis of the failure.
+5. Step by step analysis of the output.
+6. Pinpoint the exact root cause of the failure
+7. Actionable prompt improvement or RAG updates.
 
 ## Installation
 
@@ -19,7 +37,7 @@ pip3 install fiddlecube
 ### Generate data
 
 ```python
-from fiddlecube.fiddlecube import FiddleCube
+from fiddlecube import FiddleCube
 
 fc = FiddleCube(api_key="<api-key>")
 dataset = fc.generate(
@@ -33,7 +51,31 @@ print(dataset)
 ```
 
 ```json
-{'results': [{'query': 'Question: Why did the cat not want to be petted?', 'contexts': ['The cat did not want to be petted.'], 'answer': 'The cat did not want to be petted because it was not in the mood for physical affection at that moment.', 'score': 0.8, 'question_type': 'SIMPLE'}, {'query': "Was the cat pleased with the owner's actions?", 'contexts': ["The cat was not happy with the owner's behavior."], 'answer': "No, the cat was not pleased with the owner's actions.", 'score': 0.8, 'question_type': 'NEGATIVE'}], 'status': 'COMPLETED', 'num_tokens_generated': 44, 'rate_limited': False}
+{
+   "results":[
+      {
+         "query":"Question: Why did the cat not want to be petted?",
+         "contexts":[
+            "The cat did not want to be petted."
+         ],
+         "answer":"The cat did not want to be petted because it was not in the mood for physical affection at that moment.",
+         "score":0.8,
+         "question_type":"SIMPLE"
+      },
+      {
+         "query":"Was the cat pleased with the owner's actions?",
+         "contexts":[
+            "The cat was not happy with the owner's behavior."
+         ],
+         "answer":"No, the cat was not pleased with the owner's actions.",
+         "score":0.8,
+         "question_type":"NEGATIVE"
+      }
+   ],
+   "status":"COMPLETED",
+   "num_tokens_generated":44,
+   "rate_limited":false
+}
 ```
 
 ### Diagnose Failures
@@ -50,7 +92,12 @@ Trace through the prompt, the RAG query to root cause the failure.
 Iteratively improve the prompt, RAG accuracy to build a robust system.
 
 ```python
-diagnosis = fc.diagnose(dataset["results"])
+diagnosis = fc.diagnose({
+        "query": "What is the capital of France?",
+        "answer": "Paris",
+        "prompt": "You are an expert at answering hard questions.",
+        "context": ["Paris is the capital of France."],
+    })
 print("==diagnosis==", diagnosis)
 ```
 
