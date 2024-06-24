@@ -1,5 +1,5 @@
 # FiddleCube - Generate golden evaluation datasets for RAG
-Evaluate your LLM before each prompt or RAG upgrade is deployed using a golden dataset. A diverse set of queries and their ideal responses to benchmark your LLM.  
+FiddleCube generates a golden dataset to evaluate your LLM. Test the LLM with the golden dataset before pushing any prompt or RAG upgrades.
 Jump to: [Ensuring diversity and correctness](ensuring-diversity-and-correctness)
 
 ## Quickstart
@@ -59,4 +59,4 @@ dataset
 ## Ensuring diversity and correctness
 - The questions are spread across the vector embeddings to ensure completeness of testing.
 - The queries and responses are evaluated for correctness and context relevancy.
-- Citations to the database context are maintained for ease of auditing and testing.
+- Citations to the database context are maintained for ease of testing and auditing.
