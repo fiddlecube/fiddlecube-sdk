@@ -1,10 +1,9 @@
 [tool.poetry]
 name = "fiddlecube"
-version = "0.1.1"
-description = "Generate synthetic data from seed datasets."
+version = "0.1.2"
+description = "Generate ideal question-answer dataset for testing your LLM."
 authors = ["Kaushik Srinivasan <kaushik@fiddlecube.ai>"]
 readme = "README.md"
-packages = [{ include = "fiddlecube" }]
 
 [tool.poetry.dependencies]
 python = ">=3.9, <3.13"
