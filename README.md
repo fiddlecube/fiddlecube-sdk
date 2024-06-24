@@ -1,5 +1,5 @@
 # FiddleCube - Generate ideal question-answers for testing RAG
-FiddleCube generates an ideal question-answer dataset for testing your LLM. Run tests on this dataset before pushing any prompt or RAG upgrades.
+FiddleCube generates an ideal question-answer dataset for testing your LLM. Run tests on this dataset before pushing any prompt or RAG upgrades.  
 Jump to: [Ensuring diversity and correctness](ensuring-diversity-and-correctness)
 
 ## Quickstart
