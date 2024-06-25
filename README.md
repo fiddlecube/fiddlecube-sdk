@@ -68,6 +68,7 @@ dataset
 - [ ] CI setup - Run as part of CI/CD pipeline
 - [ ] Diagnose failures - step-by-step analysis of failed queries
 
-## Contact Us
+## More Questions?
 
+[Book a demo](https://cal.com/kaushiks/fc)  
 Contact us at [founders@fiddlecube.ai](mailto:founders@fiddlecube.ai) for any feature requests, feedback or questions.
