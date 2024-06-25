@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fiddlecube"
-version = "0.1.5"
+version = "0.1.6"
 description = "Generate ideal question-answer dataset for testing your LLM."
 authors = ["Kaushik Srinivasan <kaushik@fiddlecube.ai>"]
 readme = "README.md"
