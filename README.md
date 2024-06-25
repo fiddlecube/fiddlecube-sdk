@@ -54,11 +54,25 @@ dataset
 }
 ```
 
-## Ensuring diversity and correctness
+## Ideal QnA datasets for testing, eval and training LLMs
 
-- The questions are spread across the vector embeddings to ensure completeness of testing.
-- The queries and responses are evaluated for correctness and context relevancy.
-- Citations to the database context are maintained for ease of testing and auditing.
+Testing, evaluation or training LLMs requires an ideal QnA dataset aka the golden dataset.
+
+This dataset needs to be:
+
+- Diverse — covering a wide range of queries
+- Accurate responses
+
+Creating such a dataset takes significant manual effort.
+
+As the prompt or RAG contexts are updated, which is nearly all the time for early applications, the dataset needs to be updated to match.
+
+## FiddleCube generates ideal QnA from vector embeddings
+
+- The questions cover the entire RAG knowledge corpus.
+- Complex reasoning, safety alignment and 5 other question types are generated.
+- Filtered for correctness, context relevance and style.
+- Auto-updated with prompt and RAG updates.
 
 ## Roadmap
 
