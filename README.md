@@ -66,6 +66,7 @@ dataset
 - [ ] Multi-turn conversations
 - [ ] Evaluation Setup - Integrate metrics
 - [ ] CI setup - Run as part of CI/CD pipeline
+- [ ] Diagnose failures - step-by-step analysis of failed queries
 
 ## Contact Us
 
