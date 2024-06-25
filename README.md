@@ -10,15 +10,9 @@ FiddleCube generates an ideal question-answer dataset for testing your LLM. Run 
 pip3 install fiddlecube
 ```
 
-### Register
+### API Key Authentication
 
-Run
-
-```bash
-fiddlecube register
-```
-
-Follow the steps to get an API key.
+Get the API key [here](https://dashboard.fiddlecube.ai/api-key).
 
 ### Usage
 
