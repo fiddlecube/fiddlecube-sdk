@@ -72,3 +72,7 @@ dataset
 - [ ] Multi-turn conversations
 - [ ] Evaluation Setup - Integrate metrics
 - [ ] CI setup - Run as part of CI/CD pipeline
+
+## Contact Us
+
+Contact us at [founders@fiddlecube.ai](mailto:founders@fiddlecube.ai) for any feature requests, feedback or questions.
