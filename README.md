@@ -58,10 +58,7 @@ dataset
 
 Testing, evaluation or training LLMs requires an ideal QnA dataset aka the golden dataset.
 
-This dataset needs to be:
-
-- Diverse — covering a wide range of queries
-- Accurate responses
+This dataset needs to be diverse, covering a wide range of queries with accurate responses.
 
 Creating such a dataset takes significant manual effort.
 
