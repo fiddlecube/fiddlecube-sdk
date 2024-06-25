@@ -65,3 +65,10 @@ dataset
 - The questions are spread across the vector embeddings to ensure completeness of testing.
 - The queries and responses are evaluated for correctness and context relevancy.
 - Citations to the database context are maintained for ease of testing and auditing.
+
+## Roadmap
+
+- [x] Question-answers, complex reasoning from RAG
+- [ ] Multi-turn conversations
+- [ ] Evaluation Setup - Integrate metrics
+- [ ] CI setup - Run as part of CI/CD pipeline
