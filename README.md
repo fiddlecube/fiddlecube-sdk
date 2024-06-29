@@ -28,8 +28,8 @@ dataset = fc.generate(
         "Bread wheat (Triticum aestivum L) and durum wheat (Triticum turgidum var durum L) are the types of wheat that are mainly produced in our country, and durum wheat is one of the native wheat crops.",
         "Ethiopia is known to be the primary source of durum wheat and a source of its biodiversity.",
         "Durum wheat is grown in high and medium altitude areas and clay and light soils, and its industrial demand is increasing from time to time.",
-    ],
-    3,
+    ], # data chunks
+    3, # number of rows to generate
 )
 dataset
 ```
