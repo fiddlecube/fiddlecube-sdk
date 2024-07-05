@@ -39,7 +39,7 @@ class FiddleCube:
         """
         Run diagnostics on a log of LLM interactions.
         Step-by-step analysis of how the LLM output was achieved
-        based on the query, prompt and context.
+        based on the query, prompt, answer and context.
         Example:
         fc.diagnose([
             {
