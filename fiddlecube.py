@@ -40,18 +40,13 @@ class FiddleCube:
         Run diagnostics on a log of LLM interactions.
         Step-by-step analysis of how the LLM output was achieved
         based on the query, prompt, answer and context.
-        Example:
-        fc.diagnose([
-            {
-                "query": "What is the capital of France?",
-                "answer": "Paris",
-                "prompt": "You are an expert at answering hard questions.",
-                "context": ["Paris is the capital of France."],
-            }
-        ])
         """
         url = "https://api.fiddlecube.ai/api/debug/"
-        headers = {"accept": "application/json", "Content-Type": "application/json"}
+        headers = {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+            "X-Api-Key": self.api_key,
+        }
         data = {"dataset": logs}
         response = requests.post(url, headers=headers, data=json.dumps(data))
         if response.status_code == 200:
