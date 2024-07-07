@@ -40,16 +40,15 @@ dataset = fc.generate(
 ```python
 from fiddlecube import FiddleCube
 fc = FiddleCube(api_key="<api-key>")
-result = fc.diagnose([
-        {
-            "query": "What is the capital of France?",
-            "answer": "Paris",
-            "prompt": "You are an expert at answering hard questions.",
-            "context": [
-                "Paris is the capital of France."
-            ]
-        }
-    ]
+result = fc.diagnose(
+    [{
+        "query": "Can you explain supply and demand with an example?",
+        "answer": "Supply and demand is a fundamental economic principle. For instance, consider concert tickets. If a popular band announces a show, demand for tickets is high. Initially, supply is limited, so prices are high. As the concert date approaches, if tickets remain unsold, prices might drop to increase demand. Conversely, if demand outstrips supply, prices may rise further.",
+        "prompt": "Explain the concept of supply and demand in economics using a real-world example. Your answer should be between 50-75 words",
+        "context": [
+            "The evolution of the music industry, much like any other industry, is a story of innovation, disruption, and adaptation. From the early days of sound recording to the streaming age, how we consume and engage with music have transformed profoundly, often reflecting broader societal shifts in technology, culture, and economy. The invention of the phonograph by Thomas Edison in 1877 marked the beginning of a new era for music. Before this, music was primarily experienced live, at concerts, dance halls, or in homes. The phonograph allowed sound to be captured, stored, and replayed, giving birth to the recorded music industry. Initially, these recordings were made on wax cylinders. However, by the 20th century, flat disc records made of shellac began to dominate, paving the way for what would be commonly known as vinyl records."
+        ]
+    }]
 )
 ```
 
