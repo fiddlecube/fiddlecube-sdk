@@ -16,6 +16,8 @@ Get the API key [here](https://dashboard.fiddlecube.ai/api-key).
 
 ### Usage
 
+## Generate the Dataset
+
 ```python
 from fiddlecube import FiddleCube
 
@@ -31,44 +33,23 @@ dataset = fc.generate(
     ], # data chunks
     3, # number of rows to generate
 )
-dataset
 ```
 
-```json
-{
-    "results": [
-        {
-            "query": "Where is wheat primarily cultivated in Ethiopia?",
-            "contexts": [
-                "Wheat is mainly grown in the midlands and highlands of Ethiopia."
-            ],
-            "answer": "\"Wheat is primarily cultivated in the midlands and highlands of Ethiopia.\"",
-            "score": 0.8,
-            "question_type": "SIMPLE"
-        },
-        {
-            "query": "If wheat, teff, corn and sorghum are the main crops, what was the coverage of wheat crops in the 2009/10 season?",
-            "contexts": [
-                "Wheat covers most of the country's agricultural land next to teff, corn and sorghum and in the 2009/10 crop season 1.69 million hectares were covered by wheat crops"
-            ],
-            "answer": "1.69 million hectares",
-            "score": 0.8,
-            "question_type": "CONDITIONAL"
-        },
-        {
-            "query": "What was the total production obtained as mentioned in the context? A) 46.42 million quintals B) 26.75 million quintals C) 26.75 quintals D) 46.42 quintals per hectare",
-            "contexts": [
-                "46.42 million quintals of production was obtained and the average yield was 26.75 quintals per hectare."
-            ],
-            "answer": "Answer: A) 46.42 million quintals\n\nExplanation: The context information clearly states that \"46.42 million quintals of production was obtained,\" which directly corresponds to option A. The other options do not accurately reflect the total production mentioned in the context. Option B incorrectly combines the average yield figure with \"million quintals,\" option C provides only the average yield per hectare without the \"million\" scale, and option D incorrectly suggests that the production figure is a rate per hectare, rather than a total quantity.",
-            "score": 0.8,
-            "question_type": "MCQ"
-        }
-  ],
-  "status": "COMPLETED",
-  "num_tokens_generated": 44,
-  "rate_limited": false
-}
+## Diagnose your data generated
+
+```python
+from fiddlecube import FiddleCube
+fc = FiddleCube(api_key="<api-key>")
+result = fc.diagnose(
+    [{
+        "query": "Can you explain supply and demand with an example?",
+        "answer": "Supply and demand is a fundamental economic principle. For instance, consider concert tickets. If a popular band announces a show, demand for tickets is high. Initially, supply is limited, so prices are high. As the concert date approaches, if tickets remain unsold, prices might drop to increase demand. Conversely, if demand outstrips supply, prices may rise further.",
+        "prompt": "Explain the concept of supply and demand in economics using a real-world example. Your answer should be between 50-75 words",
+        "context": [
+            "The evolution of the music industry, much like any other industry, is a story of innovation, disruption, and adaptation. From the early days of sound recording to the streaming age, how we consume and engage with music have transformed profoundly, often reflecting broader societal shifts in technology, culture, and economy. The invention of the phonograph by Thomas Edison in 1877 marked the beginning of a new era for music. Before this, music was primarily experienced live, at concerts, dance halls, or in homes. The phonograph allowed sound to be captured, stored, and replayed, giving birth to the recorded music industry. Initially, these recordings were made on wax cylinders. However, by the 20th century, flat disc records made of shellac began to dominate, paving the way for what would be commonly known as vinyl records."
+        ]
+    }]
+)
 ```
 
 ## Ideal QnA datasets for testing, eval and training LLMs
@@ -94,7 +75,7 @@ As the prompt or RAG contexts are updated, which is nearly all the time for earl
 - [ ] Multi-turn conversations
 - [ ] Evaluation Setup - Integrate metrics
 - [ ] CI setup - Run as part of CI/CD pipeline
-- [ ] Diagnose failures - step-by-step analysis of failed queries
+- [x] Diagnose failures - step-by-step analysis of failed queries
 
 ## More Questions?
 
