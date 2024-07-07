@@ -5,9 +5,10 @@ import json
 class FiddleCube:
     def __init__(self, api_key):
         self.api_key = api_key
+        self.base_url = "https://api.fiddlecube.ai/api"
 
     def generate(self, context_str: list[str], num_rows: int):
-        url = "https://api.fiddlecube.ai/api/generate/sync"
+        url = self.base_url + "/generate/sync"
         headers = {
             "accept": "application/json",
             "Content-Type": "application/json",
@@ -50,7 +51,7 @@ class FiddleCube:
             }
         ])
         """
-        url = "https://api.fiddlecube.ai/api/debug/"
+        url = self.base_url + "/debug/"
         headers = {"accept": "application/json", "Content-Type": "application/json"}
         data = {"dataset": logs}
         response = requests.post(url, headers=headers, data=json.dumps(data))
@@ -61,3 +62,20 @@ class FiddleCube:
             print("Failed to debug.")
             print("==response==", response)
             return None
+
+    def test(
+        self, prompt: str, ground_truth_dataset: list[dict], model: str = "gpt=4o"
+    ):
+        url = self.base_url + "/eval/test"
+        headers = {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+            "X-Api-Key": self.api_key,
+        }
+        data = {
+            "prompt": prompt,
+            "ground_truth_dataset": ground_truth_dataset,
+            "model": model,
+        }
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+        return response.json()
