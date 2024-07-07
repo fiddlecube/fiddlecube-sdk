@@ -90,54 +90,6 @@ result = fc.diagnose([
         }
     ]
 )
-result
-```
-
-```json
-{
-    "dataset": [
-        {
-            "prompt_analysis_result": {
-                "can_be_answered": "0",
-                "related": "0",
-                "topic_of_context": "answering hard questions",
-                "topic_of_query": "capital of France",
-                "summary": "The context provided is about answering hard questions, but it does not contain any information about the capital of France.",
-                "info": "Include information about the capitals of countries in the context."
-            },
-            "prompt_classification_result": {
-                "context": "useful",
-                "botrole": "partially-useful",
-                "examples": "not-applicable",
-                "instruction": "partially-useful",
-                "language": "useful"
-            },
-            "data": {
-                "query": "What is the capital of France?",
-                "answer": "Paris",
-                "prompt": "You are an expert at answering hard questions.",
-                "context": [
-                    "Paris is the capital of France."
-                ]
-            },
-            "query_analysis_result": {
-                "query_can_be_answered": "0",
-                "topic_of_context": "expertise in answering hard questions",
-                "topic_of_query": "capital of France",
-                "info": "What are some examples of hard questions you can answer?",
-                "summary": "The context is about being an expert at answering hard questions, while the query is about the capital of France. The query is not related to the context. A more relevant query would be asking for examples of hard questions that can be answered."
-            },
-            "answer_analysis_result": {
-                "gen_ans": "Paris",
-                "is_similar": "1",
-                "summary": "The query asks for the capital of France, which is a subset of the topic of answering hard questions. Based on the context, the capital of France is Paris. Negative logical reasoning confirms that no other city fits the description as the capital of France. Therefore, the answer is Paris."
-            },
-            "meta": {
-                "time_taken": "0:00:02.460000"
-            }
-        }
-    ]
-}
 ```
 
 ## Ideal QnA datasets for testing, eval and training LLMs
