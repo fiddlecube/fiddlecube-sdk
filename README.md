@@ -33,46 +33,7 @@ dataset = fc.generate(
     ], # data chunks
     3, # number of rows to generate
 )
-dataset
 ```
-
-```json
-{
-    "results": [
-        {
-            "query": "Where is wheat primarily cultivated in Ethiopia?",
-            "contexts": [
-                "Wheat is mainly grown in the midlands and highlands of Ethiopia."
-            ],
-            "answer": "\"Wheat is primarily cultivated in the midlands and highlands of Ethiopia.\"",
-            "score": 0.8,
-            "question_type": "SIMPLE"
-        },
-        {
-            "query": "If wheat, teff, corn and sorghum are the main crops, what was the coverage of wheat crops in the 2009/10 season?",
-            "contexts": [
-                "Wheat covers most of the country's agricultural land next to teff, corn and sorghum and in the 2009/10 crop season 1.69 million hectares were covered by wheat crops"
-            ],
-            "answer": "1.69 million hectares",
-            "score": 0.8,
-            "question_type": "CONDITIONAL"
-        },
-        {
-            "query": "What was the total production obtained as mentioned in the context? A) 46.42 million quintals B) 26.75 million quintals C) 26.75 quintals D) 46.42 quintals per hectare",
-            "contexts": [
-                "46.42 million quintals of production was obtained and the average yield was 26.75 quintals per hectare."
-            ],
-            "answer": "Answer: A) 46.42 million quintals\n\nExplanation: The context information clearly states that \"46.42 million quintals of production was obtained,\" which directly corresponds to option A. The other options do not accurately reflect the total production mentioned in the context. Option B incorrectly combines the average yield figure with \"million quintals,\" option C provides only the average yield per hectare without the \"million\" scale, and option D incorrectly suggests that the production figure is a rate per hectare, rather than a total quantity.",
-            "score": 0.8,
-            "question_type": "MCQ"
-        }
-  ],
-  "status": "COMPLETED",
-  "num_tokens_generated": 44,
-  "rate_limited": false
-}
-```
-
 
 ## Diagnose your data generated
 
@@ -90,7 +51,6 @@ result = fc.diagnose([
         }
     ]
 )
-result
 ```
 
 ## Ideal QnA datasets for testing, eval and training LLMs
