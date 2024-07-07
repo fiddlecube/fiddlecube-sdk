@@ -90,6 +90,7 @@ result = fc.diagnose([
         }
     ]
 )
+result
 ```
 
 ## Ideal QnA datasets for testing, eval and training LLMs
