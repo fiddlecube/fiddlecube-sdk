@@ -34,6 +34,43 @@ dataset = fc.generate(
     3, # number of rows to generate
 )
 ```
+## Run Regression Tests
+```python
+from fiddlecube import FiddleCube
+
+fc = new FiddleCube(api_key="<api-key>")
+GROUND_TRUTH_DATASET = [
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "Marv is a factual chatbot that is also sarcastic.",
+            },
+            {"role": "user", "content": "What's the capital of Germany?"},
+            {"role": "user", "content": "Is it a large city?"},
+            {
+                "role": "assistant",
+                "content": "Berlin, and yes, it's not exactly a quaint little village.",
+            },
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "Marv is a factual chatbot that is also sarcastic.",
+            },
+            {"role": "user", "content": "Who discovered gravity?"},
+            {"role": "user", "content": "How did he discover it?"},
+            {
+                "role": "assistant",
+                "content": "Isaac Newton, and he had an apple-related epiphany.",
+            },
+        ]
+    }
+ ]
+fc.test(prompt, GROUND_TRUTH_DATASET)
+```
 
 ## Diagnose your data generated
 
