@@ -1,3 +1,8 @@
+> [!Note]
+> This repository is now archived. Thanks to all the users who have supported us so far!
+> We are working on the next version of our product based on your valuable feedback.
+> Watch this space for new, interesting developments in the future.
+
 # FiddleCube - Generate ideal question-answers for testing RAG
 
 FiddleCube generates an ideal question-answer dataset for testing your LLM. Run tests on this dataset before pushing any prompt or RAG upgrades.
