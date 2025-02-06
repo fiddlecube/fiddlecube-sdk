@@ -7,7 +7,10 @@ class FiddleCube:
         self.api_key = api_key
         self.base_url = "https://api.fiddlecube.ai/api"
 
-    def redteam(self, context_str: list[str], num_rows: int):
+    def redteam_transform(self, context_str: list[str]):
+        """
+        Transform data coming from llama stack
+        """
         url = self.base_url + "/redteam"
         headers = {
             "accept": "application/json",
