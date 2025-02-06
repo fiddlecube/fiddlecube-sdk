@@ -8,7 +8,7 @@ class RedTeam:
         self.base_url = "https://api.fiddlecube.ai/api"
     def redteam_transform(self, context_str: list[str]):
         """
-         Red team
+        Red team transformation using the provided context strings.
         """
         url = self.base_url + "/redteam"
         headers = {
@@ -16,5 +16,12 @@ class RedTeam:
             "Content-Type": "application/json",
             "X-Api-Key": self.api_key,
         }
-        ## you can access our redteaming capabilities from here
-        pass
+        payload = json.dumps({"context": context_str})
+
+        try:
+            response = requests.post(url, headers=headers, data=payload)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+            return None
