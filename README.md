@@ -15,10 +15,6 @@ FiddleCube generates an ideal question-answer dataset for testing your LLM. Run 
 pip3 install fiddlecube
 ```
 
-### API Key
-
-Get the API key [here](https://dashboard.fiddlecube.ai/api-key).
-
 ### Usage
 
 ## Generate the Dataset
